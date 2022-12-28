@@ -9,9 +9,9 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Data
 @NoArgsConstructor
 @Table(name = "Venta")
+@Data
 public class Venta {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
