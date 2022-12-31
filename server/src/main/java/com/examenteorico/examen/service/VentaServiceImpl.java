@@ -10,56 +10,68 @@ import com.examenteorico.examen.dto.requestDto.VentaRequestDto;
 import com.examenteorico.examen.model.Venta;
 import com.examenteorico.examen.repository.VentaRepository;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
+import jakarta.transaction.Transactional;
+
 @Service
-public class VentaServiceImpl implements VentaService{
+public class VentaServiceImpl implements VentaService {
 
   private final VentaRepository ventaRepository;
+  private final UserService userService;
+
+  @PersistenceContext
+  private EntityManager entityManager;
 
   @Autowired
-  public VentaServiceImpl(VentaRepository ventaRepository){
-      this.ventaRepository = ventaRepository;
+  public VentaServiceImpl(VentaRepository ventaRepository, UserService userService) {
+    this.ventaRepository = ventaRepository;
+    this.userService = userService;
   }
 
-	@Override
-	public Venta addVenta(VentaRequestDto ventaRequestDto) {
+  @Override
+  public Venta addVenta(Long userId, VentaRequestDto ventaRequestDto) {
     Venta venta = new Venta();
     venta.setDescription(ventaRequestDto.getDescription());
     venta.setQuantitySold(ventaRequestDto.getQuantitySold());
     venta.setUnitaryPrice(ventaRequestDto.getUnitaryPrice());
-    venta.setTotal(ventaRequestDto.getTotal());
+    venta.setFolio(ventaRequestDto.getFolio());
+    venta.setUser(userService.getUser(userId));
 
-		return ventaRepository.save(venta);
-	}
+    return ventaRepository.save(venta);
+  }
 
-	@Override
-	public List<Venta> getVentas() {
-    List<Venta> ventas = new ArrayList<>();
-    ventaRepository.findAll().forEach(ventas::add);
-		return ventas;
-	}
+  @Transactional
+  @Override
+  public List<Venta> getVentas(Long userId) {
+    String query = "FROM Venta WHERE user=:user";
+    List<Venta> ventas = entityManager.createQuery(query)
+        .setParameter("user", userService.getUser(userId))
+        .getResultList();
+    return ventas;
+  }
 
-	@Override
-	public Venta getVenta(Long ventaId) {
-		return ventaRepository.findById(ventaId).orElseThrow(() -> 
-      new IllegalArgumentException("venta with ventaId: " + ventaId + " could not be found"));
-	}
+  @Override
+  public Venta getVenta(Long ventaId) {
+    return ventaRepository
+        .findById(ventaId)
+        .orElseThrow(() -> new IllegalArgumentException("venta with ventaId: " + ventaId + " could not be found"));
+  }
 
-	@Override
-	public Venta deleteVenta(Long ventaId) {
+  @Override
+  public void deleteVenta(Long ventaId) {
     Venta venta = getVenta(ventaId);
     ventaRepository.delete(venta);
-    return venta;
-	}
+  }
 
-	@Override
-	public Venta editVenta(Long ventaId, VentaRequestDto ventaRequestDto) {
+  @Override
+  public void editVenta(Long ventaId, VentaRequestDto ventaRequestDto) {
     Venta ventaToEdit = getVenta(ventaId);
     ventaToEdit.setDescription(ventaRequestDto.getDescription());
     ventaToEdit.setQuantitySold(ventaRequestDto.getQuantitySold());
     ventaToEdit.setUnitaryPrice(ventaRequestDto.getUnitaryPrice());
-    ventaToEdit.setTotal(ventaRequestDto.getTotal());
+    ventaToEdit.setFolio(ventaRequestDto.getFolio());
+    ventaRepository.save(ventaToEdit);
+  }
 
-		return ventaToEdit;
-	}
-  
 }

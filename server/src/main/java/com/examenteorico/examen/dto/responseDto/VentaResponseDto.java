@@ -8,5 +8,5 @@ public class VentaResponseDto {
   private String description;
   private Integer quantitySold;
   private Float unitaryPrice;
-  private double total;
+  private Integer folio;
 }

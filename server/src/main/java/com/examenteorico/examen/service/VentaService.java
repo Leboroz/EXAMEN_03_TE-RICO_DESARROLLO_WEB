@@ -9,9 +9,13 @@ import com.examenteorico.examen.model.Venta;
 
 @Service
 public interface VentaService {
-  public Venta addVenta(VentaRequestDto ventaRequestDto);
-  public List<Venta> getVentas();
-  public Venta getVenta(Long ventaId);
-  public Venta deleteVenta(Long ventaId);
-  public Venta editVenta(Long ventaId, VentaRequestDto ventaRequestDto);
+  Venta addVenta(Long userId, VentaRequestDto ventaRequestDto);
+
+  List<Venta> getVentas(Long userId);
+
+  Venta getVenta(Long ventaId);
+
+  void deleteVenta(Long ventaId);
+
+  void editVenta(Long ventaId, VentaRequestDto ventaRequestDto);
 }
