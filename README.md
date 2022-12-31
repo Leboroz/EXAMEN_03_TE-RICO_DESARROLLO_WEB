@@ -7,34 +7,34 @@
 
 Encuentra la app aqui [live link](https://boisterous-ganache-e7a00d.netlify.app/)
 
-## API endeoints
+## API endpoints
 
 - https://ejercicio-practico.onrender.com/registration
- - data:
- ```json
- {
-  "name": "",
-  "password": ""
- }
- ```
+  - data:
+   ```json
+   {
+    "name": "",
+    "password": ""
+   }
+   ```
  
-- https://ejercicio-practico.onrender.com/login/create
- - data:
- ```json
- {
-  "name": "",
-  "password": ""
- }
- ```
+ - https://ejercicio-practico.onrender.com/login/create
+   - data:
+   ```json
+   {
+    "name": "",
+    "password": ""
+   }
+   ```
  
- - https://ejercicio-practico.onrender.com/login/
+- https://ejercicio-practico.onrender.com/login/
   - header: Authoriation: '[token]'
 
 
- - https://ejercicio-practico.onrender.com/venta/getall
+- https://ejercicio-practico.onrender.com/venta/getall
   - header: Authoriation: '[token]'
   
- - https://ejercicio-practico.onrender.com/venta/add
+- https://ejercicio-practico.onrender.com/venta/add
   - header: Authoriation: '[token]'
   - data:
   ```json
@@ -46,7 +46,7 @@ Encuentra la app aqui [live link](https://boisterous-ganache-e7a00d.netlify.app/
   }
   ```
   
- - https://ejercicio-practico.onrender.com/venta/edit/:id
+- https://ejercicio-practico.onrender.com/venta/edit/:id
   - header: Authoriation: '[token]'
   - data:
   ```json
