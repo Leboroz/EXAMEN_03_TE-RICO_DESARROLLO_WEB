@@ -1,4 +1,4 @@
-FROM gradle:4.7.0-jdk17-alpine AS build
+FROM gradle:7.2.0-jdk17 AS build
 
 RUN gradle build --no-daemon 
 
