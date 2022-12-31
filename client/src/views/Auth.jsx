@@ -19,7 +19,7 @@ const Auth = props => {
     e.preventDefault();
     axios({
       method: 'POST',
-      url: 'http://localhost:8080/login/create',
+      url: 'https://ejercicio-practico.onrender.com/login/create',
       data: { name: user, password },
     }).then(res => {
       if (res.data !== 'Error') {
@@ -35,7 +35,7 @@ const Auth = props => {
     e.preventDefault();
     axios({
       method: 'POST',
-      url: 'http://localhost:8080/registration/',
+      url: 'https://ejercicio-practico.onrender.com/registration/',
       data: { name: user, password }
     }).then(token => {
       setToggle(!toggle);

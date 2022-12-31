@@ -34,7 +34,7 @@ const Sells = () => {
     (async () => {
       const response = axios({
         method: 'GET',
-        url: 'http://localhost:8080/venta/getall',
+        url: 'https://ejercicio-practico.onrender.com/venta/getall',
         headers: {
           Authorization: localStorage.getItem('token'),
         }
@@ -57,7 +57,7 @@ const Sells = () => {
     try {
       const res = await axios({
         method: 'POST',
-        url: 'http://localhost:8080/venta/add',
+        url: 'https://ejercicio-practico.onrender.com/venta/add',
         headers: {
           Authorization: localStorage.getItem('token'),
         },
@@ -79,7 +79,7 @@ const Sells = () => {
 
     const res = axios({
       method: 'POST',
-      url: `http://localhost:8080/venta/edit/${id.id}`,
+      url: `https://ejercicio-practico.onrender.com/venta/edit/${id.id}`,
       data: { description, quantitySold, unitaryPrice, folio }
     }).then(res => {
       setVentas(prev => {
@@ -167,7 +167,7 @@ const Sells = () => {
                       if (confirmation) {
                         axios({
                           method: 'DELETE',
-                          url: `http://localhost:8080/venta/delete/${venta.id}`,
+                          url: `https://ejercicio-practico.onrender.com/venta/delete/${venta.id}`,
                         }).then(() => {
                           setVentas(arr => {
                             arr.splice(i, 1);
