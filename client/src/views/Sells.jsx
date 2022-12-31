@@ -46,7 +46,7 @@ const Sells = () => {
 
   const formHandler = (e) => {
     e.preventDefault();
-    const arr = ventas.filter(venta => venta.folio == folioFilter)
+    const arr = ventas.filter(venta => venta.folio === parseInt(folioFilter, 10))
     setFiltered(arr);
     if (!arr.length) alert('El folio ingresado no concuerda con la data');
     setFolioFilter('');
@@ -152,7 +152,7 @@ const Sells = () => {
             </tr>
           </thead>
           <tbody>
-            {ventas.map((venta, i) => (
+            {filtered.map((venta, i) => (
               <tr key={venta.id}>
                 <td>{i + 1}</td>
                 <td>{venta.description}</td>
@@ -197,6 +197,16 @@ const Sells = () => {
             )) || <tr className='w-full'><td colSpan={6} className='text-center w-full'>No hay ventas</td></tr>}
           </tbody>
         </table>}
+      {filtered.length > 0 && <div className='flex w-full justify-around'>
+        <div className='flex'>
+          <p>Total Productos: </p>
+          <span className='border-b-2 w-24 text-center'>{filtered.reduce((acu, curr) => acu + curr.quantitySold, 0)}</span>
+        </div>
+        <div className='flex'>
+          <p>Total Venta: </p>
+          <span className='border-b w-24 text-center'>{filtered.reduce((acu, curr) => curr.quantitySold * curr.unitaryPrice + acu, 0)}</span>
+        </div>
+      </div>}
     </section>
   )
 }
