@@ -1,37 +1,59 @@
 import { useEffect, useState } from 'react'
-import Form from '../components/Form.jsx'
-import FormField from '../components/FormField.jsx'
-import Header from '../components/Header.jsx'
+import { useNavigate } from 'react-router-dom'
+import AuthWindow from '../components/AuthWindow.jsx'
+import axios from 'axios';
 
-const Auth = () => {
+const Auth = props => {
   const [user, setUser] = useState('');
   const [password, setPassword] = useState('');
-  useEffect(() => {
-  }, [])
+  const [authenticated, setAuthenticated] = useState(false);
+  const [toggle, setToggle] = useState(true);
+  const navigate = useNavigate();
 
-  const formHandler = (e) => {
+  useEffect(() => {
+    if (localStorage.getItem('token')) navigate('/');
+  }, [authenticated])
+
+
+  const loginHandler = (e) => {
     e.preventDefault();
-    fetch('http://localhost:8080/login/create', {
+    axios({
       method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ email: user, password })
-    }).then(res => res.text())
-      .then(token => {
-        localStorage.token = token;
-      })
+      url: 'http://localhost:8080/login/create',
+      data: { name: user, password },
+    }).then(res => {
+      if (res.data !== 'Error') {
+        localStorage.setItem('token', res.data);
+        setAuthenticated(true);
+      }
+      else
+        alert('Usuario o contraseña invalido');
+    }).catch(e => alert(e))
+  }
+
+  const registerHandler = (e) => {
+    e.preventDefault();
+    axios({
+      method: 'POST',
+      url: 'http://localhost:8080/registration/',
+      data: { name: user, password }
+    }).then(token => {
+      setToggle(!toggle);
+      alert('Usuario Creado')
+    }).catch(e => alert(e))
   }
 
   return (
     <section className='w-full h-screen flex justify-center items-center'>
       <div className='h-fit p-6 shadow-md bg-slate-50 border border-blue-700'>
-        <Header text="LOGIN" />
-        <Form onSubmit={formHandler}>
-          <FormField type='text' name="user" label="Usuario:" value={user} onChange={e => setUser(e.target.value)} />
-          <FormField type='password' name="password" label="Contraseña:" value={password} onChange={e => setPassword(e.target.value)} />
-          <input className='p-2 w-fit self-center border border-blue-700' type="submit" value="INGRESAR" />
-        </Form>
+        <button
+          onClick={() => setToggle(!toggle)}
+          className='w-full p-2 bg-slate-700 mb-5 text-white'
+          type="button"
+        >{toggle ? "Regitrar" : "Login"}</button>
+        {toggle
+          && <AuthWindow header='LOGIN' buttonText='INGRESAR' handler={loginHandler} user={user} password={password} setUser={setUser} setPassword={setPassword} />
+          || <AuthWindow header='REGISTRO' buttonText='CREAR' handler={registerHandler} user={user} password={password} setUser={setUser} setPassword={setPassword} />}
       </div>
     </section>
   )
