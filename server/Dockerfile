@@ -2,7 +2,7 @@ FROM gradle:7.2.0-jdk17 AS build
 
 COPY . .
 
-RUN ./gradlew build  
+RUN ./gradlew build  -x test 
 
 FROM openjdk:17-jdk-slim
 
