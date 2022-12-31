@@ -41,7 +41,7 @@
 </td>
 <td>
 <div class="infoBox" id="duration">
-<div class="counter">0.004s</div>
+<div class="counter">0.003s</div>
 <p>duration</p>
 </div>
 </td>
@@ -257,7 +257,7 @@ Caused by: java.lang.IllegalStateException: PostInitCallback queue could not be 
 </thead>
 <tr>
 <td class="failures">contextLoads()</td>
-<td class="failures">0.004s</td>
+<td class="failures">0.003s</td>
 <td class="failures">failed</td>
 </tr>
 </table>
@@ -265,14 +265,14 @@ Caused by: java.lang.IllegalStateException: PostInitCallback queue could not be 
 <div id="tab2" class="tab">
 <h2>Standard output</h2>
 <span class="code">
-<pre>05:15:22.930 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [ExamenApplicationTests]: using SpringBootContextLoader
-05:15:22.936 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.examenteorico.examen.ExamenApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
-05:15:22.937 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.examenteorico.examen.ExamenApplicationTests]: ExamenApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
-05:15:22.959 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using ContextCustomizers for test class [ExamenApplicationTests]: [DisableObservabilityContextCustomizer, PropertyMappingContextCustomizer, Customizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, TestRestTemplateContextCustomizer]
-05:15:23.009 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/home/leboroz/workspace/java/ejercicio-practico/server/build/classes/java/main/com/examenteorico/examen/ExamenApplication.class]
-05:15:23.010 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.examenteorico.examen.ExamenApplication for test class com.examenteorico.examen.ExamenApplicationTests
-05:15:23.086 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners for test class [ExamenApplicationTests]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, EventPublishingTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener, ResetMocksTestExecutionListener]
-05:15:23.087 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: class [ExamenApplicationTests], class annotated with @DirtiesContext [false] with mode [null]
+<pre>06:11:15.859 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [ExamenApplicationTests]: using SpringBootContextLoader
+06:11:15.864 [Test worker] DEBUG org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.examenteorico.examen.ExamenApplicationTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+06:11:15.864 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.examenteorico.examen.ExamenApplicationTests]: ExamenApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+06:11:15.883 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using ContextCustomizers for test class [ExamenApplicationTests]: [DisableObservabilityContextCustomizer, PropertyMappingContextCustomizer, Customizer, ExcludeFilterContextCustomizer, DuplicateJsonObjectContextCustomizer, MockitoContextCustomizer, TestRestTemplateContextCustomizer]
+06:11:15.932 [Test worker] DEBUG org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider - Identified candidate component class: file [/home/leboroz/workspace/java/ejercicio-practico/server/build/classes/java/main/com/examenteorico/examen/ExamenApplication.class]
+06:11:15.933 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.examenteorico.examen.ExamenApplication for test class com.examenteorico.examen.ExamenApplicationTests
+06:11:16.003 [Test worker] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners for test class [ExamenApplicationTests]: [ServletTestExecutionListener, DirtiesContextBeforeModesTestExecutionListener, ApplicationEventsTestExecutionListener, MockitoTestExecutionListener, DependencyInjectionTestExecutionListener, DirtiesContextTestExecutionListener, TransactionalTestExecutionListener, SqlScriptsTestExecutionListener, EventPublishingTestExecutionListener, RestDocsTestExecutionListener, MockRestServiceServerResetTestExecutionListener, MockMvcPrintOnlyOnFailureTestExecutionListener, WebDriverTestExecutionListener, MockWebServiceServerTestExecutionListener, ResetMocksTestExecutionListener]
+06:11:16.005 [Test worker] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: class [ExamenApplicationTests], class annotated with @DirtiesContext [false] with mode [null]
 
   .   ____          _            __ _ _
  /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
@@ -282,15 +282,15 @@ Caused by: java.lang.IllegalStateException: PostInitCallback queue could not be 
  =========|_|==============|___/=/_/_/_/
  :: Spring Boot ::                (v3.0.1)
 
-2022-12-31T05:15:23.298-04:00  INFO 711 --- [    Test worker] c.e.examen.ExamenApplicationTests        : Starting ExamenApplicationTests using Java 17.0.5 with PID 711 (started by leboroz in /home/leboroz/workspace/java/ejercicio-practico/server)
-2022-12-31T05:15:23.300-04:00  INFO 711 --- [    Test worker] c.e.examen.ExamenApplicationTests        : No active profile set, falling back to 1 default profile: &quot;default&quot;
-2022-12-31T05:15:23.757-04:00  INFO 711 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2022-12-31T05:15:23.816-04:00  INFO 711 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 53 ms. Found 2 JPA repository interfaces.
-2022-12-31T05:15:24.165-04:00  INFO 711 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2022-12-31T05:15:24.198-04:00  INFO 711 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.6.Final
-2022-12-31T05:15:24.288-04:00  WARN 711 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
-2022-12-31T05:15:24.366-04:00  INFO 711 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2022-12-31T05:15:25.393-04:00 ERROR 711 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
+2022-12-31T06:11:16.219-04:00  INFO 2019 --- [    Test worker] c.e.examen.ExamenApplicationTests        : Starting ExamenApplicationTests using Java 17.0.5 with PID 2019 (started by leboroz in /home/leboroz/workspace/java/ejercicio-practico/server)
+2022-12-31T06:11:16.221-04:00  INFO 2019 --- [    Test worker] c.e.examen.ExamenApplicationTests        : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2022-12-31T06:11:16.702-04:00  INFO 2019 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-12-31T06:11:16.757-04:00  INFO 2019 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 49 ms. Found 2 JPA repository interfaces.
+2022-12-31T06:11:17.084-04:00  INFO 2019 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-12-31T06:11:17.115-04:00  INFO 2019 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.6.Final
+2022-12-31T06:11:17.232-04:00  WARN 2019 --- [    Test worker] org.hibernate.orm.deprecation            : HHH90000021: Encountered deprecated setting [javax.persistence.sharedCache.mode], use [jakarta.persistence.sharedCache.mode] instead
+2022-12-31T06:11:17.314-04:00  INFO 2019 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-12-31T06:11:18.359-04:00 ERROR 2019 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Exception during pool initialization.
 
 org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
 	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:319) ~[postgresql-42.5.1.jar:42.5.1]
@@ -447,7 +447,7 @@ Caused by: java.net.ConnectException: Connection refused
 	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:235) ~[postgresql-42.5.1.jar:42.5.1]
 	... 140 common frames omitted
 
-2022-12-31T05:15:25.407-04:00  WARN 711 --- [    Test worker] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
+2022-12-31T06:11:18.373-04:00  WARN 2019 --- [    Test worker] o.h.e.j.e.i.JdbcEnvironmentInitiator     : HHH000342: Could not obtain connection to query metadata
 
 org.postgresql.util.PSQLException: Connection to localhost:5432 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
 	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:319) ~[postgresql-42.5.1.jar:42.5.1]
@@ -604,19 +604,19 @@ Caused by: java.net.ConnectException: Connection refused
 	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:235) ~[postgresql-42.5.1.jar:42.5.1]
 	... 140 common frames omitted
 
-2022-12-31T05:15:25.419-04:00  INFO 711 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
-2022-12-31T05:15:25.779-04:00 ERROR 711 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is java.lang.IllegalStateException: PostInitCallback queue could not be processed...
+2022-12-31T06:11:18.385-04:00  INFO 2019 --- [    Test worker] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2022-12-31T06:11:18.773-04:00 ERROR 2019 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Failed to initialize JPA EntityManagerFactory: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is java.lang.IllegalStateException: PostInitCallback queue could not be processed...
         - PostInitCallbackEntry - Entity(com.examenteorico.examen.model.Venta) `sqmMultiTableInsertStrategy` interpretation
         - PostInitCallbackEntry - Entity(com.examenteorico.examen.model.User) `sqmMultiTableInsertStrategy` interpretation
 
-2022-12-31T05:15:25.780-04:00  WARN 711 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is java.lang.IllegalStateException: PostInitCallback queue could not be processed...
+2022-12-31T06:11:18.774-04:00  WARN 2019 --- [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is java.lang.IllegalStateException: PostInitCallback queue could not be processed...
         - PostInitCallbackEntry - Entity(com.examenteorico.examen.model.Venta) `sqmMultiTableInsertStrategy` interpretation
         - PostInitCallbackEntry - Entity(com.examenteorico.examen.model.User) `sqmMultiTableInsertStrategy` interpretation
 
-2022-12-31T05:15:25.787-04:00  INFO 711 --- [    Test worker] .s.b.a.l.ConditionEvaluationReportLogger : 
+2022-12-31T06:11:18.781-04:00  INFO 2019 --- [    Test worker] .s.b.a.l.ConditionEvaluationReportLogger : 
 
 Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
-2022-12-31T05:15:25.799-04:00 ERROR 711 --- [    Test worker] o.s.boot.SpringApplication               : Application run failed
+2022-12-31T06:11:18.792-04:00 ERROR 2019 --- [    Test worker] o.s.boot.SpringApplication               : Application run failed
 
 org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'entityManagerFactory' defined in class path resource [org/springframework/boot/autoconfigure/orm/jpa/HibernateJpaConfiguration.class]: [PersistenceUnit: default] Unable to build Hibernate SessionFactory; nested exception is java.lang.IllegalStateException: PostInitCallback queue could not be processed...
         - PostInitCallbackEntry - Entity(com.examenteorico.examen.model.Venta) `sqmMultiTableInsertStrategy` interpretation
@@ -778,7 +778,7 @@ Caused by: java.lang.IllegalStateException: PostInitCallback queue could not be 
 		at org.hibernate.metamodel.mapping.internal.MappingModelCreationProcess.executePostInitCallbacks(MappingModelCreationProcess.java:108) ~[hibernate-core-6.1.6.Final.jar:6.1.6.Final]
 		... 122 common frames omitted
 
-2022-12-31T05:15:25.810-04:00 ERROR 711 --- [    Test worker] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener] to prepare test instance [com.examenteorico.examen.ExamenApplicationTests@6cb194f5]
+2022-12-31T06:11:18.804-04:00 ERROR 2019 --- [    Test worker] o.s.test.context.TestContextManager      : Caught exception while allowing TestExecutionListener [org.springframework.test.context.web.ServletTestExecutionListener] to prepare test instance [com.examenteorico.examen.ExamenApplicationTests@6cb194f5]
 
 java.lang.IllegalStateException: Failed to load ApplicationContext for [WebMergedContextConfiguration@118a4d5 testClass = com.examenteorico.examen.ExamenApplicationTests, locations = [], classes = [com.examenteorico.examen.ExamenApplication], contextInitializerClasses = [], activeProfiles = [], propertySourceLocations = [], propertySourceProperties = [&quot;org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true&quot;], contextCustomizers = [org.springframework.boot.test.autoconfigure.actuate.observability.ObservabilityContextCustomizerFactory$DisableObservabilityContextCustomizer@9da1, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@1f010bf0, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@177bea38, org.springframework.boot.test.json.DuplicateJsonObjectContextCustomizerFactory$DuplicateJsonObjectContextCustomizer@8ad6665, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.web.client.TestRestTemplateContextCustomizer@535779e4, org.springframework.boot.test.context.SpringBootTestAnnotation@8895b614], resourceBasePath = &quot;src/main/webapp&quot;, contextLoader = org.springframework.boot.test.context.SpringBootContextLoader, parent = null]
 	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:142) ~[spring-test-6.0.3.jar:6.0.3]
@@ -993,7 +993,7 @@ Unconditional classes:
 <input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
 </label>
 </div>Generated by 
-<a href="http://www.gradle.org">Gradle 7.6</a> at Dec 31, 2022, 5:15:25 AM</p>
+<a href="http://www.gradle.org">Gradle 7.6</a> at Dec 31, 2022, 6:11:18 AM</p>
 </div>
 </div>
 </body>
